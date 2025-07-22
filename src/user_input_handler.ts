@@ -1,6 +1,6 @@
-import * as readline from 'readline';
+import * as readline from "readline";
 
-export class UserInputHandler  {
+export class UserInputHandler {
   private rl: readline.Interface;
 
   constructor() {
@@ -10,7 +10,7 @@ export class UserInputHandler  {
     });
   }
 
-  askQuestion(question: string): Promise<string>{
+  askQuestion(question: string): Promise<string> {
     return new Promise((resolve) => {
       this.rl.question(question, (answer) => {
         resolve(answer);
@@ -18,7 +18,7 @@ export class UserInputHandler  {
     });
   }
 
-  closeInterface(){
+  closeInterface() {
     this.rl.close();
   }
 }
